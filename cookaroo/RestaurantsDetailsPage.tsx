@@ -51,10 +51,11 @@ const RestaurantDetailsPage = () => {
     const route = useRoute<any>();
     const { img, del, time, rat, restaurantName } = route.params;
     const [val, setVal] = useState<foodDetails[]>([]);
+    const [selectCategory, setSelectCategory] = useState("Burger")
     // console.log("val>>>>>",val)
 
     useEffect(() => {
-        axios.get('https://mocki.io/v1/65a814d5-4c77-4276-82a8-ef44adad3583')
+        axios.get('')
             .then(function (response) {
                 setVal(response.data)
             })
@@ -138,9 +139,14 @@ const RestaurantDetailsPage = () => {
                     }}
                 >
                     {FoodData.map((item, index) => (
-                        <FoodItemScrool
+                        <TouchableOpacity
                             key={index}
-                            txt={item.txt} />
+                            onPress={() => setSelectCategory(item.txt)}
+                        >
+                            <FoodItemScrool
+                                txt={item.txt} />
+                        </TouchableOpacity>
+
                     ))}
                 </ScrollView>
 
@@ -148,7 +154,8 @@ const RestaurantDetailsPage = () => {
                     <Text style={{ fontSize: 20, fontWeight: "bold" }}>Burger (10)</Text>
                 </View>
 
-                <FoodDAtaScroll />
+                <FoodDAtaScroll category={selectCategory} />
+
 
             </View>
         </ScrollView>

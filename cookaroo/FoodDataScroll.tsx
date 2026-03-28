@@ -19,13 +19,21 @@ const FoodDAtaScroll = () => {
     const [val, setVal] = useState<foodDetails[]>([]);
 
     useEffect(() => {
-        axios
-            .get("https://mocki.io/v1/2d4e00f7-5b25-414b-95da-ac0cdc52cb65")
-            .then(res => setVal(res.data))
-            .catch(err => console.log(err));
-    }, []);
+        axios.get('https://mocki.io/v1/11291cd1-2561-44ed-8b48-49ac21a99302')
+            .then(function (response) {
+                setVal(response.data)
+                console.log(response);
+            })
+            .catch(function (error) {
 
-   
+                console.log(error);
+            })
+            .finally(function () {
+
+            });
+    }, [])
+
+
 
     return (
         <ScrollView contentContainerStyle={{ flexDirection: "row", flexWrap: "wrap" }}>
@@ -38,7 +46,7 @@ const FoodDAtaScroll = () => {
 
                         {/* IMAGE */}
                         <TouchableOpacity
-                            onPress={() => navigation.navigate("BurgerDetailsScreen", { img: item.image,nm:item.name,pri:item.price })}
+                            onPress={() => navigation.navigate("BurgerDetailsScreen", { img: item.image, nm: item.name, pri: item.price })}
                         >
                             <Image
                                 source={{ uri: item.image }}

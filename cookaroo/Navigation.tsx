@@ -21,6 +21,7 @@ import ProfileScreen from "../cookaroo/ProfileScreen";
 import ListDetails from "../cookaroo/ListDetails";
 import MyProfile from "../cookaroo/MyProfile";
 import CartDetails from "../cookaroo/CartDetails";
+import Orders from "../cookaroo/Orders";
 
 const Stack = createNativeStackNavigator();
 

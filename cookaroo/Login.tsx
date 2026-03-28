@@ -8,9 +8,6 @@ function LoginScreen() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-
-    
-
     const storeData = async (value: any) => {
         try {
             const jsonValue = JSON.stringify(value);
@@ -20,8 +17,6 @@ function LoginScreen() {
 
         }
     };
-
-
 
     const getData = async () => {
         try {

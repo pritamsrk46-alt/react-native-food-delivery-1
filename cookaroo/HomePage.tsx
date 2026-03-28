@@ -23,7 +23,7 @@ const data: ScrollItemProps[] = [
         iconName: "fire",
         bgColor: "#fff"
     },
-    
+
     {
         icon: "coffee",
         iconName: "coffee",
@@ -126,8 +126,8 @@ const HomepageScreen = () => {
                     </View>
 
                     <TouchableOpacity
-                    onPress={()=>Navigation.navigate("RestaurantsItem")}
-                    style={{ width: "20%", paddingTop: 5, justifyContent: "center" }}>
+                        onPress={() => Navigation.navigate("RestaurantsItem")}
+                        style={{ width: "20%", paddingTop: 5, justifyContent: "center" }}>
                         <Text style={{ fontSize: 20, textAlign: "center" }}>See All</Text>
                     </TouchableOpacity>
 

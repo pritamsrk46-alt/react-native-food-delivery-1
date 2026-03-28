@@ -25,7 +25,7 @@ const RestaurantsItem = () => {
   const [value, setValue] = useState<Restaurant[]>([]);
 
   useEffect(() => {
-    axios.get('https://mocki.io/v1/5ee95128-7081-46e2-b309-43a2a39db3ea')
+    axios.get('https://mocki.io/v1/bc5238c9-24ef-4300-8ac2-e593573a4e6d')
       .then(function (response) {
         setValue(response.data)
         console.log(response);

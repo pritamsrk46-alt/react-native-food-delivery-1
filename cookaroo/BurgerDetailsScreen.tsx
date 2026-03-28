@@ -37,7 +37,7 @@ const BurgerDetailsScreen = () => {
     const [cartCount, setCartCount] = useState<number>(0);
 
     useEffect(() => {
-        axios.get('https://mocki.io/v1/65a814d5-4c77-4276-82a8-ef44adad3583')
+        axios.get('')
             .then(function (response) {
                 setData(response.data[0])
                 console.log(response.data[0]);
@@ -199,7 +199,7 @@ const BurgerDetailsScreen = () => {
                     <View style={{ height: 50, width: "80%", backgroundColor: "black", flexDirection: "row", justifyContent: "space-evenly", alignItems: "center", paddingHorizontal: 10, borderRadius: 30 }}>
 
                         <TouchableOpacity
-                            onPress={() => dispatch(deleteCart(data))}
+                            onPress={() => data && dispatch(deleteCart(data))}
                             style={{ height: 30, width: 30, backgroundColor: "#848383ff", justifyContent: "center", alignItems: "center", borderRadius: 20 }}>
                             <FontAwesome name="minus" size={20} color={"white"} />
                         </TouchableOpacity>
